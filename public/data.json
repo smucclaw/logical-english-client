@@ -1,0 +1,13 @@
+  {
+    "name": "Alice",
+    "dob": "1990-01-01",
+    "hobbies": [
+      "reading",
+      "painting"
+    ],
+    "address": {
+      "city": "London",
+      "zipcode": "SW1A 1AA",
+      "country": "United Kingdom"
+    }
+  }

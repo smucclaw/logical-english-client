@@ -1,0 +1,15 @@
+{
+  "name": "pengines",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pengines.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "browser-or-node": "^2.1.1",
+    "jquery": "^3.7.1",
+    "najax": "^1.0.7"
+  },
+  "keywords": []
+}

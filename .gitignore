@@ -1,0 +1,8 @@
+.clj-kondo/.cache
+.lsp/.cache
+.nrepl-*
+.shadow-cljs/
+public/js
+node_modules/
+.cpcache/
+dist/

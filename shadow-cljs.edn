@@ -1,0 +1,42 @@
+;; shadow-cljs configuration
+{:deps true
+ :dev-http {8000 "public"}
+ :builds
+ {:app
+  {:target :esm
+   :output-dir "public/js"
+   :modules {:main {:js-options {:js-provider :import}
+                    :exports {query_le
+                              le-webform-glue.main/query-le!
+
+                              query_le_js
+                              le-webform-glue.main/query-le-js!
+
+                              re_init_le_swipl
+                              le-webform-glue.main/re-init-le-swipl!
+
+                              query_le_wasm
+                              le-webform-glue.main/query-le-wasm!
+
+                              query_le_wasm_js
+                              le-webform-glue.main/query-le-wasm-js!
+
+                              render_le_resp_with_guifier
+                              le-webform-glue.main/render-le-resp-with-guifier!
+
+                              le_tree_to_goals
+                              le-webform-glue.main/le-tree->goals-js
+
+                              le_tree_to_str
+                              le-webform-glue.main/le-tree->str
+
+                              clj_to_js
+                              le-webform-glue.main/clj-to-js
+
+                              js_to_clj
+                              le-webform-glue.main/js-to-clj}}}
+   :compiler-options {:output-feature-set :es2018
+                      :optimizations :advanced}
+   :js-options {:js-package-dirs ["packages" "node_modules"]}
+   :devtools {;; :preloads [le-webform-glue.preload]
+              }}}}

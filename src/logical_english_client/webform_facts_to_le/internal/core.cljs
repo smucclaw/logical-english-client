@@ -1,7 +1,7 @@
-(ns le-webform-glue.webform-facts-to-le.internal.core
-  (:require [le-webform-glue.webform-facts-to-le.internal.asami :as asami]
-            [le-webform-glue.webform-facts-to-le.internal.date :as date]
-            [le-webform-glue.webform-facts-to-le.internal.datom :as datom]
+(ns logical-english-client.webform-facts-to-le.internal.core
+  (:require [logical-english-client.webform-facts-to-le.internal.asami :as asami]
+            [logical-english-client.webform-facts-to-le.internal.date :as date]
+            [logical-english-client.webform-facts-to-le.internal.datom :as datom]
             [malli.core :as malli]
             [meander.epsilon :as m]))
 

@@ -1,4 +1,4 @@
-(ns le-webform-glue.utils 
+(ns logical-english-client.utils 
   (:require [applied-science.js-interop :as jsi]
             [cljs-bean.core :as bean]
             [tupelo.string :as str]))

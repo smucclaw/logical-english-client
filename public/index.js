@@ -23,4 +23,6 @@ const resp = await query_le_js(server_url, program, data, query);
 // await re_init_le_swipl("le.qlf");
 // const resp = await query_le_wasm(program, data, query);
 
+console.log("LE explanation tree: ", resp);
+
 render_le_resp_with_guifier("guifier", resp);

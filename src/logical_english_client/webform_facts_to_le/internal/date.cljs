@@ -1,4 +1,4 @@
-(ns le-webform-glue.webform-facts-to-le.internal.date 
+(ns logical-english-client.webform-facts-to-le.internal.date 
   (:require [tick.core :as tick]
             [tupelo.string :as str]))
 

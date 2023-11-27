@@ -1,7 +1,7 @@
-(ns le-webform-glue.webform-facts-to-le.core
+(ns logical-english-client.webform-facts-to-le.core
   (:require [applied-science.js-interop :as jsi]
             [cljs-bean.core :as bean]
-            [le-webform-glue.webform-facts-to-le.internal.core :as internal]
+            [logical-english-client.webform-facts-to-le.internal.core :as internal]
             [malli.core :as m]))
 
 (m/=> data->le-scenario [:=> [:cat :any] :string])

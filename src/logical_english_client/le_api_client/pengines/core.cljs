@@ -1,4 +1,4 @@
-(ns le-webform-glue.le-api-client.pengines.core
+(ns logical-english-client.le-api-client.pengines.core
   (:require ["pengines/pengines$default" :as Pengine]
             [applied-science.js-interop :as jsi]
             [cljs-bean.core :as bean]

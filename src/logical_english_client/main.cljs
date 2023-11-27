@@ -1,10 +1,10 @@
-(ns le-webform-glue.main
+(ns logical-english-client.main
   (:require [cljs-bean.core :as bean]
-            ;; [le-webform-glue.le-api-client.natural4-server.core :as le-natural4-server-api]
-            [le-webform-glue.le-api-client.pengines.core :as le-pengines-api]
-            [le-webform-glue.le-api-client.swipl-wasm.core :as le-wasm-api]
-            [le-webform-glue.le-expln-to-json.core :as le-expln-to-json]
-            [le-webform-glue.webform-facts-to-le.core :as webform-facts-to-le]
+            ;; [logical-english-client.le-api-client.natural4-server.core :as le-natural4-server-api]
+            [logical-english-client.le-api-client.pengines.core :as le-pengines-api]
+            [logical-english-client.le-api-client.swipl-wasm.core :as le-wasm-api]
+            [logical-english-client.le-expln-to-json.core :as le-expln-to-json]
+            [logical-english-client.webform-facts-to-le.core :as webform-facts-to-le]
             [promesa.core :as prom]
             [tupelo.core :refer [it->]]))
 

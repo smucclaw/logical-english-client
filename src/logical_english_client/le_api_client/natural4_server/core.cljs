@@ -1,4 +1,4 @@
-(ns le-webform-glue.le-api-client.natural4-server.core 
+(ns logical-english-client.le-api-client.natural4-server.core 
   (:require [lambdaisland.fetch :as fetch]))
 
 (defn query-le!

@@ -7,36 +7,36 @@
    :output-dir "public/js"
    :modules {:main {:js-options {:js-provider :import}
                     :exports {query_le
-                              le-webform-glue.main/query-le!
+                              logical-english-client.main/query-le!
 
                               query_le_js
-                              le-webform-glue.main/query-le-js!
+                              logical-english-client.main/query-le-js!
 
                               re_init_le_swipl
-                              le-webform-glue.main/re-init-le-swipl!
+                              logical-english-client.main/re-init-le-swipl!
 
                               query_le_wasm
-                              le-webform-glue.main/query-le-wasm!
+                              logical-english-client.main/query-le-wasm!
 
                               query_le_wasm_js
-                              le-webform-glue.main/query-le-wasm-js!
+                              logical-english-client.main/query-le-wasm-js!
 
                               render_le_resp_with_guifier
-                              le-webform-glue.main/render-le-resp-with-guifier!
+                              logical-english-client.main/render-le-resp-with-guifier!
 
                               le_tree_to_goals
-                              le-webform-glue.main/le-tree->goals-js
+                              logical-english-client.main/le-tree->goals-js
 
                               le_tree_to_str
-                              le-webform-glue.main/le-tree->str
+                              logical-english-client.main/le-tree->str
 
                               clj_to_js
-                              le-webform-glue.main/clj-to-js
+                              logical-english-client.main/clj-to-js
 
                               js_to_clj
-                              le-webform-glue.main/js-to-clj}}}
+                              logical-english-client.main/js-to-clj}}}
    :compiler-options {:output-feature-set :es2018
                       :optimizations :advanced}
    :js-options {:js-package-dirs ["packages" "node_modules"]}
-   :devtools {;; :preloads [le-webform-glue.preload]
+   :devtools {;; :preloads [logical-english-client.preload]
               }}}}

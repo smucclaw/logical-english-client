@@ -1,6 +1,6 @@
-(ns le-webform-glue.webform-facts-to-le.internal.datom
-  (:require [le-webform-glue.utils :as utils]
-            [le-webform-glue.webform-facts-to-le.internal.date :as date]
+(ns logical-english-client.webform-facts-to-le.internal.datom
+  (:require [logical-english-client.utils :as utils]
+            [logical-english-client.webform-facts-to-le.internal.date :as date]
             [malli.core :as malli]
             [tick.core :as tick]))
 

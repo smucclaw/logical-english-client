@@ -1,4 +1,4 @@
-(ns le-webform-glue.webform-facts-to-le.internal.asami 
+(ns logical-english-client.webform-facts-to-le.internal.asami 
   (:require [applied-science.js-interop :as jsi]
             [asami.core :as d]
             [cljs-bean.core :as bean]

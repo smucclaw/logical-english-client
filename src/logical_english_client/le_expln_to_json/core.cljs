@@ -1,8 +1,8 @@
-(ns le-webform-glue.le-expln-to-json.core
+(ns logical-english-client.le-expln-to-json.core
   (:require ["guifier$default" :as Guifier]
             [applied-science.js-interop :as jsi]
             [cljs-bean.core :as bean]
-            [le-webform-glue.utils :as utils]
+            [logical-english-client.utils :as utils]
             [meander.epsilon :as m]
             [meander.strategy.epsilon :as r]
             [taipei-404.html :refer [html->hiccup]]

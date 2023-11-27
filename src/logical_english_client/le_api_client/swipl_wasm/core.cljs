@@ -1,4 +1,4 @@
-(ns le-webform-glue.le-api-client.swipl-wasm.core
+(ns logical-english-client.le-api-client.swipl-wasm.core
   (:require [applied-science.js-interop :as jsi]
             [cljs-bean.core :as bean]
             [promesa.core :as prom]

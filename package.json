@@ -29,6 +29,7 @@
     "shadow-cljs:release": "shadow-cljs release app",
     "start": "shadow-cljs watch app",
     "build:prod": "shadow-cljs release app && webpack --mode=production --node-env=production",
-    "build:dev": "shadow-cljs compile app && webpack --mode=development"
+    "build:dev": "shadow-cljs compile app && webpack --mode=development",
+    "server": "shadow-cljs server"
   }
 }

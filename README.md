@@ -1,5 +1,7 @@
 # logical-english-client
 
+TODO
+
 ## Dependencies
 
 - java
@@ -27,8 +29,13 @@ This project is developed with JDK LTS 21 and nodejs LTS 20.10.0.
 - If you edit and save a file, it will recompile the code and reload the
   browser to show the updated version.
 
-### Compile an optimized version
+### Compile an optimized version of the library
+
+Run the following command:
 
 ```shell
   pnpm build:prod
 ```
+
+This compiles an optimised, production-ready version of the library to
+`public/js/main.js`.

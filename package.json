@@ -29,9 +29,6 @@
     "shadow-cljs:release": "shadow-cljs release app",
     "start": "shadow-cljs watch app",
     "build:prod": "shadow-cljs release app && webpack --mode=production --node-env=production",
-    "build:dev": "shadow-cljs compile app && webpack --mode=development",
-    "watch": "webpack --watch",
-    "serve": "webpack serve",
-    "run-node": "echo \"{\\\"type\\\": \\\"module\\\"}\" > public/js/package.json && node --experimental-network-imports --trace-uncaught public/node_index.js"
+    "build:dev": "shadow-cljs compile app && webpack --mode=development"
   }
 }

@@ -2,7 +2,7 @@
   (:require [logical-english-client.utils :as utils]
             [logical-english-client.webform-facts-to-le.internal.date :as date]
             [malli.core :as malli]
-            [tick.core :as tick]))
+            [tupelo.core :refer [it->]]))
 
 (defprotocol LEDatom
   (le-datom->le-str [this]))
@@ -28,7 +28,9 @@
            (string? %) (transform-str %)
            (keyword? %) (-> % name transform-str)
            :else %)]
-    (->> rest (transduce (map transform-kw-and-str) str))))
+    (->> rest
+         (eduction (map transform-kw-and-str))
+         (apply str))))
 
 (defrecord MembershipDatom [entity list-entity]
   LEDatom
@@ -55,9 +57,10 @@
 (defn le-datoms->le-scenario [le-datoms]
   (when (not-empty le-datoms)
     (let [end-of-line ".\n"]
-      (as-> le-datoms x
-        (transduce (comp (map le-datom->le-str)
-                         (filter some?)
-                         (interpose end-of-line))
-                   str x)
-        (str x end-of-line)))))
+      (it-> le-datoms
+       (eduction (comp (map le-datom->le-str)
+                       (filter some?)
+                       (interpose end-of-line))
+                 it)
+       (apply str it)
+       (str it end-of-line)))))

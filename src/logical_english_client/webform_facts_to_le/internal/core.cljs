@@ -9,9 +9,9 @@
 (defn- asami-triple->le-datom [asami-triple]
   (m/match asami-triple
     (m/seqable ?e :a/contains ?v)
-    (datom/MembershipDatom. ?v ?e)
+    (datom/map->MembershipDatom {:entity ?v :list-entity ?e})
 
-    (m/seqable ?e ?a (m/app date/str->maybe-date (m/some ?date)))
+    (m/seqable ?e ?a (m/pred string? (m/app date/->maybe-date (m/some ?date))))
     (datom/DateDatom. ?e ?a ?date)
 
     (m/seqable ?e ?a ?v)

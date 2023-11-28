@@ -2,7 +2,7 @@
   (:require [tick.core :as tick]
             [tupelo.string :as str]))
 
-(defn str->maybe-date [s]
+(defn ->maybe-date [s]
   (try
     (tick/date s)
     (catch js/Object _ nil)))

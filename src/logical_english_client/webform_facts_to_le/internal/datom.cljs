@@ -2,7 +2,7 @@
   (:require [logical-english-client.utils :as utils]
             [logical-english-client.webform-facts-to-le.internal.date :as date]
             [malli.core :as malli]
-            [tupelo.core :refer [it->]]))
+            [net.cgrand.xforms.rfs :as rf]))
 
 (defprotocol LEDatom
   (le-datom->le-str [this]))
@@ -30,7 +30,7 @@
            :else %)]
     (->> rest
          (eduction (map transform-kw-and-str))
-         (apply str))))
+         (reduce rf/str))))
 
 (defrecord MembershipDatom [entity list-entity]
   LEDatom
@@ -56,11 +56,10 @@
 (malli/=> le-datoms->le-scenario [:=> [:cat [:sequential le-datom]] :string])
 (defn le-datoms->le-scenario [le-datoms]
   (when (not-empty le-datoms)
-    (let [end-of-line ".\n"]
-      (it-> le-datoms
-       (eduction (comp (map le-datom->le-str)
+    (let [end-of-line ".\n"
+          xforms (comp (map le-datom->le-str)
                        (filter some?)
-                       (interpose end-of-line))
-                 it)
-       (apply str it)
-       (str it end-of-line)))))
+                       (map #(str % end-of-line)))]
+      (->> le-datoms
+           (eduction xforms)
+           (reduce rf/str)))))

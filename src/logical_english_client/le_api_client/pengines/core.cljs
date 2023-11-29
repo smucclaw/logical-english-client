@@ -8,22 +8,22 @@
             [promesa.core :as prom]
             [tupelo.core :refer [it->]]))
 
-(defn transform-pengine-result [pengine-result]
-  (-> pengine-result
-      (m/rewrite
-       {:event (m/some "success") & ?rest}
-       {:success true & ?rest}
+(def transform-pengine-result
+  (r/pipe
+   (r/rewrite
+    {:event (m/some "success") & ?rest}
+    {:success true & ?rest}
 
-       {:event (m/some (m/not "success")) & ?rest}
-       {:success false & ?rest})
+    {:event (m/some (m/not "success")) & ?rest}
+    {:success false & ?rest})
 
-      (m/match
-       {:data (m/some [?result & _])
-        :success (m/some ?success)
-        :more (m/some ?more)}
-        {:answer ?result
-         :success ?success
-         :more-answers? ?more})))
+   (r/match
+    {:data (m/some [?result & _])
+     :success (m/some ?success)
+     :more (m/some ?more)}
+     {:answer ?result
+      :success ?success
+      :more-answers? ?more})))
 
 (def ^:private pengine
   (atom nil))

@@ -8,64 +8,32 @@
             [taipei-404.html :refer [html->hiccup]]
             [tupelo.string :as str]))
 
-;; (defrecord Goal [pos-or-neg goal-str child-goals])
-
-;; Small step evaluation semantics for transforming LE html trees into
-;; a nicer form.
-
-;; Evaluation contexts:
-;; E ::= [.] | <?tag ... > E ... E </ ?tag>
-;; Note that metavariables are prefixed with ?
-;; This has the same effect as extending the small step rewriting judgement
-;; form (axiomatized below) to a catamorphism over the html tree.
-
-;; ------------------------------
-;; <html>
-;; <head> _ </head>
-;; <body> ?body </body> => ?body
-;; </html>
-
-;; -----------------------------------------------------
-;; <li title = "Rule inference" >
-;;   ?x                           => [:proved? true] ?x
-;; </li>
-
-;; ------------------------------------------------------
-;; <li title = "Failed goal" >
-;;   ?x                           => [:proved? false] ?x
-;; </li>
-
-;; ------------------------
-;; <b> ?goal </b> => ?goal
-
-;; -----------------------------------------------
-;; <span class= "leaf" > </span> => [:because []]
-
-;; ------------------------------------------------------------------------------------------
-;; <ul class= "nested" > because
-;;   ?child-goal-0 and ... and ?child-goal-n  => [:because [?child-goal-0 ... ?child-goal-n]]
-;; </ul>
-
-;; -------------------------------------------
-;; [k0 v0] ... [kn vn] => {k0 v0, ..., kn vn}
-
 (def hiccup->map
   (r/bottom-up
    (r/rewrite
-    ;; [:html {} [:head {}] [:body {} ?body & _]] ?body
-    
+    ;; _ [KEEP k0 v0] _ ... _ [KEEP kn vn] _ => {k0 v0 ... kn vn}
     [:li . (m/or [KEEP & !kv-pairs] _) ...] {& [!kv-pairs ...]}
 
+    ;; <li title = "Rule inference" >
+    ;;   ?x                           => [KEEP :proved? true] ?x
+    ;; </li>
     {:title "Rule inference"} [KEEP :proved? true]
+
+    ;; <li title = "Failed goal" >
+    ;;   ?x                           => [KEEP :proved? false] ?x
+    ;; </li>
     {:title "Failed goal"} [KEEP :proved? false]
 
+    ;; <b> ?goal </b> => ?goal
     [:b ?goal] [KEEP :goal ?goal]
 
-    ;; [:span {:class "leaf"} " "] [KEEP :because []]
-    
+    ;; <ul class= "nested" > because
+    ;;   ?child-goal-0 and ... and ?child-goal-n  => [:because [?child-goal-0 ... ?child-goal-n]]
+    ;; </ul>
     [:ul {:class "nested"} _because . !child-goal _sep ...]
     [KEEP :because [!child-goal ...]]
 
+    ;; Fall through no-op rule.
     ?x ?x)))
 
 (defn- num-or-str->at-most-num-dp-str
@@ -111,8 +79,16 @@
 
     ?x ?x)))
 
-(def remove-prolog-metadata-nodes
+(def remove-prolog-meta-nodes
+  "This function recursively traverses the tree to eliminate meta nodes,
+   ie. nodes in the explanation tree whose explanation text references a
+   SWI-Prolog meta-predicate.
+   This includes nodes that correspond to a successful proof of a universally
+   quantifiated formula, ie. SWI-Prolog's forall meta-predicate.
+   When such a node is eliminated, its children are bubbled upwards."
   (r/pipe
+   ;; First, we recursively annotate the tree with symbols like map, aux and
+   ;; flatten-1.
    (r/top-down
     (r/rewrite
      {:because (m/some ?child-goals) & ?rest}
@@ -120,20 +96,27 @@
 
      ?x ?x))
 
-   ;; Fixpoint iteration to compute the (full) head normal form of a tree
-   ;; (which exists as strong normalization and confluence are obvious)
+   ;; Next, we define a term rewriting system which interprets the new symbols
+   ;; (ie. aux, map and flatten-1) as functions.
+   ;; Note that the rewriting rules for these functions, along with the
+   ;; use of bottom-up traversal of the AST, enforce call-by-value
+   ;; evaluation.
+   ;; Finally, we iterate to a fixed point to strongly normalize the tree.
    (r/fix
     (r/bottom-up
      (r/rewrite
+      ;; concatMap one layer of the tree.
       (map ?map-fn over [!xs ...] and then ?combine-fn)
       (?combine-fn [(?map-fn !xs) ...])
 
+      ;; Eliminate the metadata node, bubbling its children upwards.
       (aux {:goal (m/re #"^.*Prolog.*$") :because ?child-goals})
       ?child-goals
 
       (aux (m/and ?child-goal {:goal (m/not (m/re #"^.*Prolog.*$"))}))
       ?child-goal
 
+      ;; Flatten 1 layer of the tree.
       (flatten-1 []) []
       (flatten-1 [(m/seqable ?xs) & ?rest]) [& ?xs & ?rest]
       (flatten-1 [(m/and ?x (m/not m/seqable)) & ?rest]) [?x & ?rest]
@@ -143,7 +126,7 @@
 (def transform-negs
   (let [split-str-on-first-neg #(str/split % #"it is not the case that " 2)]
     (r/top-down
-     (r/rewrite
+     (r/match
       ;; The first 2 rules deal with eliminating double negations in the
       ;; explanation tree, while the 3rd deals with flipping positive goals of
       ;; negations into negative goals.
@@ -168,7 +151,7 @@
 
 (def post-process-keys
   (r/top-down
-   (r/rewrite
+   (r/match
     {:proved? ?proved :goal ?goal :because ?because}
     {:true? ?proved :text ?goal :because ?because}
 
@@ -176,7 +159,7 @@
 
 (def post-process-le-expln-map
   (r/pipe cleanup-goal-strs
-          ;; remove-prolog-metadata-nodes
+          remove-prolog-meta-nodes
           transform-negs
           post-process-keys))
 
@@ -191,24 +174,14 @@
 (def transform-map-for-guifier
   (r/pipe
    (r/top-down
-    (r/rewrite
+    (r/match
      {:text ?text :true? false :because ?because}
-     {~(str "❌ " ?text) ?because}
+     {(str "❌ " ?text) ?because}
 
      {:text ?text :true? true :because ?because}
-     {~(str "✓ " ?text) ?because}
+     {(str "✓ " ?text) ?because}
 
      ?x ?x))
-
-  ;;  (r/top-down
-  ;;   (r/rewrite
-  ;;    {~(str "it is not the case that " ?goal) ?because}
-  ;;    {~(str "❌ " ?goal) ?because}
-
-  ;;    {?goal ?because}
-  ;;    {~(str "✓ " ?goal) ?because}
-
-  ;;    ?x ?x))
 
    ;; m/cata(morphism) over input seqs of goals to inline goal strings
    ;; in the seq, so they show up without an extra layer of nesting. 

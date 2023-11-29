@@ -98,10 +98,10 @@
 
    ;; Next, we define a term rewriting system which interprets the new symbols
    ;; (ie. aux, map and flatten-1) as functions.
-   ;; Note that the rewriting rules for these functions, along with the
-   ;; use of bottom-up traversal of the AST, enforce call-by-value
-   ;; evaluation.
-   ;; Finally, we iterate to a fixed point to strongly normalize the tree.
+   ;; Note that the bottom-up traversal of the AST has the same effect as enforcing
+   ;; a call-by-value evaluation context scheme on the rewrite rule applications.
+   ;; This rewriting system is iterated to a fixed point to strongly normalize
+   ;; the tree.
    (r/fix
     (r/bottom-up
      (r/rewrite

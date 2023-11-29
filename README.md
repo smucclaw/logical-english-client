@@ -132,8 +132,7 @@ This project is structured as a pipeline composed from 3 namespaces:
     We support multiple Logical English server backends, and this namespace
     comprises multiple sub namespaces, each allowing one to query
     a different backend.
-    Currently, we have 2 functions, each for querying a different stable
-    backend, namely:
+    Currently, we have 2 functions, each for querying a different backend, namely:
     1. The `query-le!` function in the
         [le-api-client.pengines.core](src/logical_english_client/le_api_client/pengines/core.cljs)
         namespace is used to query a server running the

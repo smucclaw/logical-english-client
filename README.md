@@ -4,7 +4,7 @@ This Clojurescript project implements a client for interacting with
 [Logical English](https://github.com/smucclaw/LogicalEnglish).
 For context, this was originally written to enable
 [L4 web forms](https://github.com/smucclaw/documentation/blob/20231116-resume-docs/docs/webform.rst)
-to query the Logical English backend with their JSON form data.
+to query the Logical English backend with JSON form data.
 
 ## API
 

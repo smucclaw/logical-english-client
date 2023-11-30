@@ -184,7 +184,8 @@ This project is structured as a pipeline composed from 3 namespaces:
     the last step is to transform it into JSON.
     `le-html-str->clj` is responsible for:
     - Transforming the HTML strings into a tree in the form of nested
-      Clojure maps (which can then be transformed into JSON).
+      Clojure maps (which can then be transformed into JSON),
+      stripping HTML related tags and metadata in the process.
       Internally, it uses `hiccup->map`, which transforms HTML in Hiccup format
       to an internal AST, stripping formatting related metadata in the process.
 

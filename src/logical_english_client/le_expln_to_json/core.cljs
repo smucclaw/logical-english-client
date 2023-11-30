@@ -9,6 +9,8 @@
             [tupelo.string :as str]))
 
 (def hiccup->map
+  "Given a LE HTML tree in the form of Hiccup, transform the tree by removing
+   HTML related tags and metadata."
   (r/bottom-up
    (r/rewrite
     ;; _ [KEEP k0 v0] _ ... _ [KEEP kn vn] _ => {k0 v0 ... kn vn}

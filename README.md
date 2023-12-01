@@ -3,7 +3,7 @@
 This Clojurescript project implements a client for interacting with
 [Logical English](https://github.com/smucclaw/LogicalEnglish).
 For context, this was originally written to enable
-[L4 web forms](https://github.com/smucclaw/documentation/blob/20231116-resume-docs/docs/webform.rst)
+[L4 web forms](https://l4-documentation.readthedocs.io/en/latest/docs/webform.html)
 to query the Logical English backend with JSON form data.
 
 ## API
@@ -104,7 +104,7 @@ This project is structured as a pipeline composed from 3 namespaces:
     (or alternatively, entity-attribute-value)
     triples which is commonly used by graph and Datalog databases,
     as described in
-    [this section](https://github.com/smucclaw/documentation/blob/20231116-resume-docs/docs/webform.rst#reasoning-about-instances-of-classes-with-constitutive-rules)
+    [this section](https://l4-documentation.readthedocs.io/en/latest/docs/webform.html#reasoning-about-instances-of-classes-with-constitutive-rules)
     of the L4 web form documentation.
 
     `data->le-scenario` performs this transformation, relying on

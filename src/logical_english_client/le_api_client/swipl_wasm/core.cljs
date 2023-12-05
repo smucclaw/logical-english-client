@@ -5,7 +5,7 @@
             [shadow.esm :refer [dynamic-import]]))
 
 (def ^:private swipl-wasm-cdn-url
-  "https://SWI-Prolog.github.io/npm-swipl-wasm/3/5/10/dynamic-import.js")
+  "https://SWI-Prolog.github.io/npm-swipl-wasm/3/5/11/dynamic-import.js")
 
 (def ^:private le-swipl
   (atom nil))

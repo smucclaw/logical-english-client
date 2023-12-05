@@ -13,7 +13,4 @@
         tick/tick {:mvn/version "0.7.5"}
         lambdaisland/uri {:mvn/version "1.16.134"}
         lambdaisland/fetch {:mvn/version "1.5.83"}
-        metosin/malli {:mvn/version "0.13.0"}
-        metosin/jsonista {:mvn/version "0.3.8"}
-        babashka/fs {:mvn/version "0.4.19"}
-        lambdaisland/chui {:mvn/version "1.2.205"}}}
+        metosin/malli {:mvn/version "0.13.0"}}}

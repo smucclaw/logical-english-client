@@ -139,6 +139,8 @@ This project is structured as a pipeline composed from 3 namespaces:
         [Logical English](https://github.com/smucclaw/LogicalEnglish)
         code base, like the
         [pre-packaged docker builds](https://github.com/smucclaw/LogicalEnglish#using-pre-packaged-docker).
+        A publicly available server instance maintained by CCLAW can be found at
+        [this url](https://le.dev.cclaw.legalese.com/).
      
         This utilises the
         [Pengines API](https://www.swi-prolog.org/pldoc/doc_for?object=section(%27packages/pengines.html%27)) as implemented in

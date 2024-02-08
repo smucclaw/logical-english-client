@@ -14,7 +14,7 @@
   (r/bottom-up
    (r/rewrite
     ;; _ [KEEP k0 v0] _ ... _ [KEEP kn vn] _ => {k0 v0 ... kn vn}
-    [:li . (m/or [KEEP & !kv-pairs] _) ...] {& [!kv-pairs ...]}
+    [:li . (m/gather [KEEP & !kv-pairs])] {& [!kv-pairs ...]}
 
     ;; <li title = "Rule inference" >
     ;;   ?x                           => [KEEP :proved? true] ?x

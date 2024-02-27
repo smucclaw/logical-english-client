@@ -47,7 +47,7 @@ For more details about the Clojurescript code base, see the
 - java
 - [pnpm](https://pnpm.io/installation)
 
-This project is developed with JDK LTS 21 and nodejs LTS 20.11.0.
+This project is developed with JDK LTS 21 and nodejs LTS 20.11.1.
 
 ## Usage
 ### Setup

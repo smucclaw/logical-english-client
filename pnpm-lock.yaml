@@ -19,7 +19,7 @@ importers:
         version: 2.21.1(@js-joda/core@5.6.3)
       guifier:
         specifier: ^1.0.24
-        version: 1.0.24(vite@5.2.11(@types/node@20.14.7)(terser@5.31.1))
+        version: 1.0.24(vite@5.2.11(@types/node@20.14.8)(terser@5.31.1))
       platform:
         specifier: ^1.3.6
         version: 1.3.6
@@ -46,8 +46,8 @@ importers:
         specifier: ^2.9.0
         version: 2.9.0(webpack@5.92.1(webpack-cli@5.1.4))
       shadow-cljs:
-        specifier: 2.28.9
-        version: 2.28.9
+        specifier: 2.28.10
+        version: 2.28.10
       webpack:
         specifier: ^5.92.1
         version: 5.92.1(webpack-cli@5.1.4)
@@ -1217,8 +1217,8 @@ packages:
   '@types/node@15.14.9':
     resolution: {integrity: sha512-qjd88DrCxupx/kJD5yQgZdcYKZKSIGBVDIBE1/LTGcNm3d2Np/jxojkdePDdfnBHJc5W7vSMpbJ1aB7p/Py69A==}
 
-  '@types/node@20.14.7':
-    resolution: {integrity: sha512-uTr2m2IbJJucF3KUxgnGOZvYbN0QgkGyWxG6973HCpMYFy2KfcgYuIwkJQMQkt1VbBMlvWRbpshFTLxnxCZjKQ==}
+  '@types/node@20.14.8':
+    resolution: {integrity: sha512-DO+2/jZinXfROG7j7WKFn/3C6nFwxy2lLpgLjEXJz+0XKphZlTLJ14mo8Vfg8X5BWN6XjyESXq+LcYdT7tR3bA==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -2004,8 +2004,8 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
-  electron-to-chromium@1.4.807:
-    resolution: {integrity: sha512-kSmJl2ZwhNf/bcIuCH/imtNOKlpkLDn2jqT5FJ+/0CXjhnFaOa9cOe9gHKKy71eM49izwuQjZhKk+lWQ1JxB7A==}
+  electron-to-chromium@1.4.810:
+    resolution: {integrity: sha512-Kaxhu4T7SJGpRQx99tq216gCq2nMxJo+uuT6uzz9l8TVN2stL7M06MIIXAtr9jsrLs2Glflgf2vMQRepxawOdQ==}
 
   elliptic@6.5.5:
     resolution: {integrity: sha512-7EjbcmUm17NQFu4Pmgmq2olYMj8nwMnpcddByChSUjArp8F5DQWcIcpriwO4ZToLNAJig0yiyjswfyGNje/ixw==}
@@ -3252,8 +3252,9 @@ packages:
   object-inspect@1.12.3:
     resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
 
-  object-inspect@1.13.1:
-    resolution: {integrity: sha512-5qoj1RUiKOMsCCNLV1CBiPYE10sziTsnmNxkAI/rZhiD63CF7IqdFGC/XzjWjpSgLf0LxXX3bDFIh0E18f6UhQ==}
+  object-inspect@1.13.2:
+    resolution: {integrity: sha512-IRZSRuzJiynemAXPYtPe5BoI/RESNYR7TYm50MC5Mqbd3Jmw5y790sErYw3V6SryFJD64b74qQQs9wn5Bg/k3g==}
+    engines: {node: '>= 0.4'}
 
   object-keys@1.1.1:
     resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
@@ -3796,8 +3797,8 @@ packages:
   shadow-cljs-jar@1.3.4:
     resolution: {integrity: sha512-cZB2pzVXBnhpJ6PQdsjO+j/MksR28mv4QD/hP/2y1fsIa9Z9RutYgh3N34FZ8Ktl4puAXaIGlct+gMCJ5BmwmA==}
 
-  shadow-cljs@2.28.9:
-    resolution: {integrity: sha512-hh/vMhd3/2I0abOJJyROtL4P3hiQrQRDtDMG8y5rKajAJE+wJp+eWbKpTIMwvrRp61hQ4UC6GIau110BhF7UxA==}
+  shadow-cljs@2.28.10:
+    resolution: {integrity: sha512-EVCJLKUqqM12N16BrjxObWeV8Rs2UauHxXs0sPqyIf5P9AbjdHE4oPFRsdD/O8NTDl6M8/oim4tPtiHhu2d6jg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -5903,20 +5904,20 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
 
   '@types/bonjour@3.5.13':
     dependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
 
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
       '@types/express-serve-static-core': 4.19.5
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
 
   '@types/eslint-scope@3.7.7':
     dependencies:
@@ -5936,7 +5937,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.5':
     dependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -5954,7 +5955,7 @@ snapshots:
 
   '@types/http-proxy@1.17.14':
     dependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
 
   '@types/json-schema@7.0.15': {}
 
@@ -5964,11 +5965,11 @@ snapshots:
 
   '@types/node-forge@1.3.11':
     dependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
 
   '@types/node@15.14.9': {}
 
-  '@types/node@20.14.7':
+  '@types/node@20.14.8':
     dependencies:
       undici-types: 5.26.5
 
@@ -5985,7 +5986,7 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
 
   '@types/serve-index@1.9.4':
     dependencies:
@@ -5994,12 +5995,12 @@ snapshots:
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
       '@types/send': 0.17.4
 
   '@types/sockjs@0.3.36':
     dependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
 
   '@types/trusted-types@2.0.7': {}
 
@@ -6010,7 +6011,7 @@ snapshots:
 
   '@types/ws@8.5.10':
     dependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
 
   '@webassemblyjs/ast@1.12.1':
     dependencies:
@@ -6418,7 +6419,7 @@ snapshots:
   browserslist@4.23.1:
     dependencies:
       caniuse-lite: 1.0.30001636
-      electron-to-chromium: 1.4.807
+      electron-to-chromium: 1.4.810
       node-releases: 2.0.14
       update-browserslist-db: 1.0.16(browserslist@4.23.1)
 
@@ -6874,7 +6875,7 @@ snapshots:
     dependencies:
       jake: 10.9.1
 
-  electron-to-chromium@1.4.807: {}
+  electron-to-chromium@1.4.810: {}
 
   elliptic@6.5.5:
     dependencies:
@@ -6953,7 +6954,7 @@ snapshots:
       is-string: 1.0.7
       is-typed-array: 1.1.13
       is-weakref: 1.0.2
-      object-inspect: 1.13.1
+      object-inspect: 1.13.2
       object-keys: 1.1.1
       object.assign: 4.1.5
       regexp.prototype.flags: 1.5.2
@@ -7360,7 +7361,7 @@ snapshots:
 
   grouped-queue@2.0.0: {}
 
-  guifier@1.0.24(vite@5.2.11(@types/node@20.14.7)(terser@5.31.1)):
+  guifier@1.0.24(vite@5.2.11(@types/node@20.14.8)(terser@5.31.1)):
     dependencies:
       '@floating-ui/dom': 1.6.5
       clone: 2.1.2
@@ -7370,7 +7371,7 @@ snapshots:
       material-icons: 1.13.12
       toml: 3.0.0
       toml-patch: 0.2.3
-      vite-plugin-css-injected-by-js: 3.5.1(vite@5.2.11(@types/node@20.14.7)(terser@5.31.1))
+      vite-plugin-css-injected-by-js: 3.5.1(vite@5.2.11(@types/node@20.14.8)(terser@5.31.1))
       xml-formatter: 3.6.2
       zod: 3.23.8
     transitivePeerDependencies:
@@ -7770,7 +7771,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -8349,7 +8350,7 @@ snapshots:
 
   object-inspect@1.12.3: {}
 
-  object-inspect@1.13.1: {}
+  object-inspect@1.13.2: {}
 
   object-keys@1.1.1: {}
 
@@ -8994,7 +8995,7 @@ snapshots:
 
   shadow-cljs-jar@1.3.4: {}
 
-  shadow-cljs@2.28.9:
+  shadow-cljs@2.28.10:
     dependencies:
       node-libs-browser: 2.2.1
       readline-sync: 1.4.10
@@ -9035,7 +9036,7 @@ snapshots:
       call-bind: 1.0.7
       es-errors: 1.3.0
       get-intrinsic: 1.2.4
-      object-inspect: 1.13.1
+      object-inspect: 1.13.2
 
   signal-exit@3.0.7: {}
 
@@ -9553,17 +9554,17 @@ snapshots:
       remove-trailing-separator: 1.1.0
       replace-ext: 1.0.1
 
-  vite-plugin-css-injected-by-js@3.5.1(vite@5.2.11(@types/node@20.14.7)(terser@5.31.1)):
+  vite-plugin-css-injected-by-js@3.5.1(vite@5.2.11(@types/node@20.14.8)(terser@5.31.1)):
     dependencies:
-      vite: 5.2.11(@types/node@20.14.7)(terser@5.31.1)
+      vite: 5.2.11(@types/node@20.14.8)(terser@5.31.1)
 
-  vite@5.2.11(@types/node@20.14.7)(terser@5.31.1):
+  vite@5.2.11(@types/node@20.14.8)(terser@5.31.1):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.18.0
     optionalDependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
       fsevents: 2.3.3
       terser: 5.31.1
 

@@ -46,14 +46,18 @@ For more details about the Clojurescript code base, see the
 
 - Java
 - [Clojure](https://clojure.org/guides/install_clojure)
-- [pnpm](https://pnpm.io/installation)
+- [proto](https://moonrepo.dev/proto)
 
-This project is developed with JDK LTS 21 and nodejs LTS 20.
+This project is developed with JDK LTS 21 and bun 1.1.22.
 
 ## Usage
 ### Setup
 ```shell
-  pnpm install
+  # Install pinned version of bun in .prototools via proto
+  proto install
+
+  # Install npm dependencies.
+  proto run bun -- install
 ```
 
 ### Running the demo
@@ -62,7 +66,7 @@ This project is developed with JDK LTS 21 and nodejs LTS 20.
 - Run the following command to start a local dev server in the `public` directory:
 
   ```shell
-    pnpm start
+    proto run bun -- start
   ```
 
 - Go to <http://localhost:8000> in your browser.

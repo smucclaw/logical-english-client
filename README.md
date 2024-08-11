@@ -81,7 +81,7 @@ This project is developed with JDK LTS 21 and bun 1.1.22.
 Run the following command:
 
 ```shell
-  pnpm build:prod
+  proto run bun -- build:prod
 ```
 
 This compiles an optimised, production-ready version of the library to

@@ -10,9 +10,9 @@
     "@webpack-cli/generators": "^3.0.7",
     "babel-loader": "^9.2.1",
     "html-webpack-plugin": "^5.6.3",
-    "mini-css-extract-plugin": "^2.9.1",
+    "mini-css-extract-plugin": "^2.9.2",
     "shadow-cljs": "2.28.18",
-    "webpack": "^5.95.0",
+    "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",
     "workbox-webpack-plugin": "^7.3.0"

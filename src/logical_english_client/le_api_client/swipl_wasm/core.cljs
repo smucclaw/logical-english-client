@@ -14,7 +14,7 @@
   (prom/let [^js swipl-mod (dynamic-import swipl-wasm-cdn-url)
              swipl (-> swipl-mod
                        (jsi/get :SWIPL)
-                       (new (bean/->js {:arguments ["-q"]})))
+                       (bean/->js {:arguments ["-q"]}))
 
             ;; Ugly hack to get swipl wasm working on nodejs.
             ;; The issue is that it fails to load prolog and qlf files on nodejs via Prolog.consult

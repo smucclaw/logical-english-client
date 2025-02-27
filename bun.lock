@@ -10,7 +10,7 @@
         "platform": "^1.3.6",
         "stack-trace": "^0.0.10",
         "stacktrace-js": "^2.0.2",
-        "ws": "^8.18.0",
+        "ws": "^8.18.1",
       },
       "devDependencies": {
         "@webpack-cli/generators": "^3.0.7",

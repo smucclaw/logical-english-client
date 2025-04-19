@@ -12,7 +12,7 @@
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
     "shadow-cljs": "2.28.23",
-    "webpack": "^5.99.5",
+    "webpack": "^5.99.6",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",
     "workbox-webpack-plugin": "^7.3.0"

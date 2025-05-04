@@ -25,7 +25,7 @@
     "platform": "^1.3.6",
     "stack-trace": "^0.0.10",
     "stacktrace-js": "^2.0.2",
-    "ws": "^8.18.1"
+    "ws": "^8.18.2"
   },
   "scripts": {
     "shadow-cljs:release": "shadow-cljs release app",

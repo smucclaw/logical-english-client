@@ -26,18 +26,27 @@
     POSSIBILITY OF SUCH DAMAGE.
 */
 
-import { isBrowser } from "browser-or-node";
+// 1. Set up the JSDOM browser environment
+const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>', {
+    // This setting tells jsdom to allow loading external resources, 
+    // which is often necessary for complex jQuery/Ajax setups.
+    resources: 'usable',
+    runScripts: 'dangerously',
+    url: 'http://localhost/'
+});
 
-// import $ from "jquery";
+const window = dom.window;
 
-if (isBrowser) {
-  var $ = require("jquery");
-  var ajax = $.ajax;
-} else {
-  var najax = require("najax");
-  var $ = najax;
-  var ajax = najax;
-}
+// 2. Make jQuery and window globals available
+global.$ = global.jQuery = $(window);
+global.window = window;
+global.document = window.document;
+
+// 3. (Crucial) Expose the broken global APIs to the window object
+// JSDOM and jQuery need these to work correctly.
+// Bun's native implementation should be used if available.
+global.XMLHttpRequest = window.XMLHttpRequest;
+global.self = global.window;
 
 // Array of pengine objects that are alive.
 let pengine_alive = [];

@@ -7,9 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "browser-or-node": "^2.1.1",
     "jquery": "^3.7.1",
-    "najax": "^1.0.7"
+    "jsdom": "^27.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
   },
   "keywords": []
 }

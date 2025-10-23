@@ -1,5 +1,6 @@
 (ns logical-english-client.le-expln-to-json.core
-  (:require ["guifier$default" :as Guifier]
+  (:require ["https://cdn.jsdelivr.net/npm/guifier@1.0.33/dist/Guifier.js$default"
+             :as Guifier]
             [applied-science.js-interop :as jsi]
             [cljs-bean.core :as bean]
             [logical-english-client.utils :as utils]
@@ -198,7 +199,7 @@
       bean/->clj
       transform-map-for-guifier
       bean/->js
-      (#(Guifier.
+      (#(new Guifier
          #js {:data % :dataType "js"
               :elementSelector (str "#" guifier-elem-id)
               :withoutContainer true

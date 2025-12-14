@@ -11,7 +11,7 @@
     "babel-loader": "^10.0.0",
     "html-webpack-plugin": "^5.6.5",
     "mini-css-extract-plugin": "^2.9.4",
-    "shadow-cljs": "3.3.2",
+    "shadow-cljs": "3.3.4",
     "webpack": "^5.103.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2",

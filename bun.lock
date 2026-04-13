@@ -5,8 +5,8 @@
     "": {
       "dependencies": {
         "@js-joda/core": "^5.7.0",
-        "@js-joda/locale_en-us": "^5.0.1",
-        "@js-joda/timezone": "^2.25.0",
+        "@js-joda/locale_en-us": "^5.1.0",
+        "@js-joda/timezone": "^2.25.1",
         "platform": "^1.3.6",
         "stack-trace": "^0.0.10",
         "stacktrace-js": "^2.0.2",
@@ -17,8 +17,8 @@
         "babel-loader": "^10.1.1",
         "html-webpack-plugin": "^5.6.6",
         "mini-css-extract-plugin": "^2.10.2",
-        "shadow-cljs": "3.3.8",
-        "webpack": "^5.105.4",
+        "shadow-cljs": "3.4.1",
+        "webpack": "^5.106.1",
         "webpack-cli": "^6.0.1",
         "webpack-dev-server": "^5.2.3",
         "workbox-webpack-plugin": "^7.4.0",
@@ -263,9 +263,9 @@
 
     "@js-joda/locale": ["@js-joda/locale@5.0.0", "", { "peerDependencies": { "@js-joda/core": ">=5.7.0", "@js-joda/timezone": "^2.23.0", "cldr-data": "*", "cldrjs": "^0.5.5" } }, "sha512-gj5yxwO6LxgizReEA9f1kYDJbavzmw0Jid0shFxEcGbMMWiri2vFFNnH/cSzOiUONoDmtVL7Pruk1xCBYCwlVw=="],
 
-    "@js-joda/locale_en-us": ["@js-joda/locale_en-us@5.0.1", "", { "peerDependencies": { "@js-joda/core": ">=5.7.0", "@js-joda/locale": ">=5.0.1", "@js-joda/timezone": "^2.23.0" } }, "sha512-w6mF3SZnX1FCW22WZ8LDZpgJP0MV812pboAaSTZScCPJt69DS8wIDwbXrcoVsxCy3a9hIsRheJosxOHWVad2tw=="],
+    "@js-joda/locale_en-us": ["@js-joda/locale_en-us@5.1.0", "", { "peerDependencies": { "@js-joda/core": ">=6.0.0", "@js-joda/locale": ">=5.1.0", "@js-joda/timezone": "^2.25.0" }, "optionalPeers": ["@js-joda/timezone"] }, "sha512-cai/+OPe1Cn9wpllowBBJ5jrOHoX7E8aNcqNA8prDDFD6zV7IBOMKGh9MhoQr8Qx45oh0T05H79lSC0NJO+pQg=="],
 
-    "@js-joda/timezone": ["@js-joda/timezone@2.25.0", "", { "peerDependencies": { "@js-joda/core": ">=5.7.0" } }, "sha512-/NVOhfYOjNB9i6kdAAyfi7hfN/FncRYvj5iExQbKuEu1LNZYj/nxmHCif4hKk7TibyVEYcuRrpKhs5PPBCxMBQ=="],
+    "@js-joda/timezone": ["@js-joda/timezone@2.25.1", "", { "peerDependencies": { "@js-joda/core": ">=5.7.0" } }, "sha512-s79ts8bXrWqM9dIBKc0AdgGuAUFpu9gmzYhOCPHJlks/Sf7FSbJHRauWlFYUwjSTZevimqthEvJycrwrVz5m4g=="],
 
     "@jsonjoy.com/base64": ["@jsonjoy.com/base64@1.1.2", "", { "peerDependencies": { "tslib": "2" } }, "sha512-q6XAnWQDIMA3+FTiOYajoYqySkO+JSat0ytXGSuRdq9uXE7o92gzuQwQM14xaCRlBLGq3v5miDGC4vkVTn54xA=="],
 
@@ -1693,7 +1693,7 @@
 
     "sha.js": ["sha.js@2.4.12", "", { "dependencies": { "inherits": "^2.0.4", "safe-buffer": "^5.2.1", "to-buffer": "^1.2.0" }, "bin": { "sha.js": "bin.js" } }, "sha512-8LzC5+bvI45BjpfXU8V5fdU2mfeKiQe1D1gIMn7XUlF3OTUrpdJpPPH4EMAnF0DsHHdSZqCdSss5qCmJKuiO3w=="],
 
-    "shadow-cljs": ["shadow-cljs@3.3.8", "", { "dependencies": { "buffer": "^6.0.3", "process": "^0.11.10", "readline-sync": "^1.4.10", "shadow-cljs-jar": "1.3.4", "source-map-support": "^0.5.21", "which": "^5.0.0", "ws": "^8.18.1" }, "bin": { "shadow-cljs": "cli/runner.js" } }, "sha512-Z220CAdSyAwpyPCE6wC5YWp6ZGyclTpdF5Be/q1mYl3EQfQdA+ZOE7XNAKwYwsJg78xh4BnFqWeRd129oDAe9A=="],
+    "shadow-cljs": ["shadow-cljs@3.4.1", "", { "dependencies": { "buffer": "^6.0.3", "process": "^0.11.10", "readline-sync": "^1.4.10", "shadow-cljs-jar": "1.3.4", "source-map-support": "^0.5.21", "which": "^5.0.0", "ws": "^8.18.1" }, "bin": { "shadow-cljs": "cli/runner.js" } }, "sha512-kl9VltQVBcNtEDZ4hi5kmVVtbIiwz/wNdH87mn2LdSp6ZoDFAo0dAGvF3KrE4AveKgNjQv2/3rd6HePMPK2HSA=="],
 
     "shadow-cljs-jar": ["shadow-cljs-jar@1.3.4", "", {}, "sha512-cZB2pzVXBnhpJ6PQdsjO+j/MksR28mv4QD/hP/2y1fsIa9Z9RutYgh3N34FZ8Ktl4puAXaIGlct+gMCJ5BmwmA=="],
 
@@ -1961,7 +1961,7 @@
 
     "webidl-conversions": ["webidl-conversions@8.0.0", "", {}, "sha512-n4W4YFyz5JzOfQeA8oN7dUYpR+MBP3PIUsn2jLjWXwK5ASUzt0Jc/A5sAUZoCYFJRGF0FBKJ+1JjN43rNdsQzA=="],
 
-    "webpack": ["webpack@5.105.4", "", { "dependencies": { "@types/eslint-scope": "^3.7.7", "@types/estree": "^1.0.8", "@types/json-schema": "^7.0.15", "@webassemblyjs/ast": "^1.14.1", "@webassemblyjs/wasm-edit": "^1.14.1", "@webassemblyjs/wasm-parser": "^1.14.1", "acorn": "^8.16.0", "acorn-import-phases": "^1.0.3", "browserslist": "^4.28.1", "chrome-trace-event": "^1.0.2", "enhanced-resolve": "^5.20.0", "es-module-lexer": "^2.0.0", "eslint-scope": "5.1.1", "events": "^3.2.0", "glob-to-regexp": "^0.4.1", "graceful-fs": "^4.2.11", "json-parse-even-better-errors": "^2.3.1", "loader-runner": "^4.3.1", "mime-types": "^2.1.27", "neo-async": "^2.6.2", "schema-utils": "^4.3.3", "tapable": "^2.3.0", "terser-webpack-plugin": "^5.3.17", "watchpack": "^2.5.1", "webpack-sources": "^3.3.4" }, "bin": { "webpack": "bin/webpack.js" } }, "sha512-jTywjboN9aHxFlToqb0K0Zs9SbBoW4zRUlGzI2tYNxVYcEi/IPpn+Xi4ye5jTLvX2YeLuic/IvxNot+Q1jMoOw=="],
+    "webpack": ["webpack@5.106.1", "", { "dependencies": { "@types/eslint-scope": "^3.7.7", "@types/estree": "^1.0.8", "@types/json-schema": "^7.0.15", "@webassemblyjs/ast": "^1.14.1", "@webassemblyjs/wasm-edit": "^1.14.1", "@webassemblyjs/wasm-parser": "^1.14.1", "acorn": "^8.16.0", "acorn-import-phases": "^1.0.3", "browserslist": "^4.28.1", "chrome-trace-event": "^1.0.2", "enhanced-resolve": "^5.20.0", "es-module-lexer": "^2.0.0", "eslint-scope": "5.1.1", "events": "^3.2.0", "glob-to-regexp": "^0.4.1", "graceful-fs": "^4.2.11", "json-parse-even-better-errors": "^2.3.1", "loader-runner": "^4.3.1", "mime-types": "^2.1.27", "neo-async": "^2.6.2", "schema-utils": "^4.3.3", "tapable": "^2.3.0", "terser-webpack-plugin": "^5.3.17", "watchpack": "^2.5.1", "webpack-sources": "^3.3.4" }, "bin": { "webpack": "bin/webpack.js" } }, "sha512-EW8af29ak8Oaf4T8k8YsajjrDBDYgnKZ5er6ljWFJsXABfTNowQfvHLftwcepVgdz+IoLSdEAbBiM9DFXoll9w=="],
 
     "webpack-cli": ["webpack-cli@6.0.1", "", { "dependencies": { "@discoveryjs/json-ext": "^0.6.1", "@webpack-cli/configtest": "^3.0.1", "@webpack-cli/info": "^3.0.1", "@webpack-cli/serve": "^3.0.1", "colorette": "^2.0.14", "commander": "^12.1.0", "cross-spawn": "^7.0.3", "envinfo": "^7.14.0", "fastest-levenshtein": "^1.0.12", "import-local": "^3.0.2", "interpret": "^3.1.1", "rechoir": "^0.8.0", "webpack-merge": "^6.0.1" }, "peerDependencies": { "webpack": "^5.82.0" }, "bin": { "webpack-cli": "./bin/cli.js" } }, "sha512-MfwFQ6SfwinsUVi0rNJm7rHZ31GyTcpVE5pgVA3hwFRb7COD4TzjUUwhGWKfO50+xdc2MQPuEBBJoqIMGt3JDw=="],
 
